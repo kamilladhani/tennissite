@@ -61,18 +61,21 @@
             </div>
         </div>
         
-   	 	{% block content %}
-                <p>Use this document as a way to quick start any new project.</p>
+   	 	  {% block content %}
+                <h1 class="row text-center" >Welcome to KLTennis!</h1>
+                <p class="row text-center" style="font-size:22px"> The latest tennis news and tactics at your fingertips. <p>
         {% endblock content %}
 
 
+    <footer>
+  		<div class="row text-center">
+              <div class="hidden-print legal col-sm-8 col-sm-offset-2" style="font-size:15px">
+                 	 <hr/>
+              	 Tennis v{{VERSION}} | &copy; 2015 KLTennis
+              </div>
+          </div>
+      </footer>
 
-		<div class="row">
-            <div class="hidden-print legal col-sm-8 col-sm-offset-2" style="font-size:15px">
-               	 <hr/>
-            	 Tennis v{{VERSION}} | &copy; 2015 KLTennis
-            </div>
-        </div>
         {% block foot_js %}
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/underscore-1.6.0.min.js"></script>

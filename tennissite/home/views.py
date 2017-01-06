@@ -14,12 +14,12 @@ from forms import NameForm
 
 def homepage(request):
 	context = {}
-	return render(request, 'home/homepage.html', context)
+	return render(request, 'base.html', context)
 
 class HomeUser(DetailView):
 	model = models.User
 	context_object_name = "user"
-	template_name = "home/homepage.html"
+	template_name = "base.html"
 
 	def get_context_data(self, *args, **kwargs):
 	    context = super(HomeUser, self).get_context_data(*args, **kwargs)
