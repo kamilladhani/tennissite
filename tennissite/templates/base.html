@@ -29,7 +29,7 @@
          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
          <![endif]-->
     	
-    	 <!-- CSS to enable hover dropdown in navbar -->
+    <!-- CSS to enable hover dropdown in navbar -->
  		 <style> 
  		 .dropdown:hover .dropdown-menu {
 			display: block;
@@ -41,37 +41,59 @@
         
  	 </head>
   
-  	 <body>
-		<div class="navbar navbar-inverse">
+  	<body>
+		    <div class="navbar navbar-inverse" style="margin: 0px">
             <div class="container-fluid">
             	  <ul class="nav navbar-nav">
-            	    <a class="navbar-brand" href="#">KLTennis</a>
-                    {% block home_active %} <li ><a href="{% url 'home:homepage' %}"></i> Home</a></li> {% endblock home_active %}
+                  {% block home_active %}
+            	    <a class="navbar-brand" href="{% url 'home:homepage' %}">KLTennis</a>
+                  {% endblock home_active %}
                 	{% block players_active %} 
                 	<li class="dropdown">
-          				<a href="{% url 'players:playerpage' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Players <span class="caret"></span></a>
+            				<a href="{% url 'players:playerpage' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Players <span class="caret"></span>
+                    </a>
           					<ul class="dropdown-menu">
             					<li><a href="{% url 'players:playerpage' %}">Featured</a></li>
            						<li><a href="{% url 'players:mens' %}">Men</a></li>
            						<li><a href="{% url 'players:womens' %}">Women</a></li>
           					</ul>
-        			</li>
-        			{% endblock players_active %} 
-                  </ul>
+        			    </li>
+        			    {% endblock players_active %} 
+                </ul>
             </div>
         </div>
+
         
    	 	  {% block content %}
-                <h1 class="row text-center" >Welcome to KLTennis!</h1>
-                <p class="row text-center" style="font-size:22px"> The latest tennis news and tactics at your fingertips. <p>
+
+        <div style="background-color: #222222">
+          <br />
+          <br />
+          <h1 class="row text-center" style="color:white;">
+            Welcome to KLTennis!
+          </h1>
+          <p class="row text-center" style="color:white; font-size:22px; padding:20px"> 
+            The latest tennis news and tactics at your fingertips. 
+          </p>
+          <br />
+        </div>
+
+        <br />
+
+        <div> 
+          <p class="row text-center" style="font-size:16px; padding:20px"> 
+            Get up-to-date news on the biggest stars in the game, including: <br /> <br /> Roger Federer <br /> Rafael Nadal <br /> Novak Djokovic <br /> Andy Murray <br /> <br /> ...and many more!
+          </p>
+        </div>
+
         {% endblock content %}
 
 
     <footer>
   		<div class="row text-center">
               <div class="hidden-print legal col-sm-8 col-sm-offset-2" style="font-size:15px">
-                 	 <hr/>
-              	 Tennis v{{VERSION}} | &copy; 2015 KLTennis
+                 <hr style="border-color: black"/>
+              	 Copyright &copy; 2017 Kamil Ladhani. All Rights Reserved.
               </div>
           </div>
       </footer>
